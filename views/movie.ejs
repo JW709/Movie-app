@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/styles.css">
+
+        <title>Document</title>
+</head>
+
+<!-- This is the movie details page. It contains the details of the movie I want to display to the user including: the movie poster, title, release date, director, actors, and plot. This will display when the user selects a movie from the homepage OR the movie link from the MDB -->
+
+<body>
+
+        <main role="main">
+                <section class="jumbotron text-center">
+                        <div class="container">
+                                <h1 class="jumbotron-heading">Movie Details</h1>
+                                <p class="led text-muted">The nitty gritty lowdown.</p>
+                                <form action="http://localhost:8080/movieSearch" method="GET">
+                                        <input type="text" class="search-bar" name='movieTitle' placeholder="Movie Database" />
+                                        <button type='submit'>
+                                                <i class="glyphicon glyphicon-search"></i>
+                                        </button>
+
+                                        <button>
+                                                <a href="http://localhost:8080/">Home</a>
+                                        </button>
+                                </form>
+                        </div>
+                </section>
+        </main>
+        <div class="container">
+                <div class="media">
+                        <div class="media-left">
+                                <img class="media-object" src="<%=movies.poster_path%>" />
+                        </div>
+                        <div class="media-body">
+                                <h2 class="featurette-heading">
+                                        <%= movies.title %>
+                                </h2>
+                                <h4>Released on:
+                                        <%= movies.released %>
+                                </h4>
+                                <h4>Directed by:
+                                        <%= movies.director %>
+                                </h4>
+                                <h4>Written by:
+                                        <%= movies.writer %>
+                                </h4>
+                                <h3 class="featurette body">Plot:</h3>
+                                <p>
+                                        <%= movies.plot %>
+                                </p>
+                                <h4 class="featurette body">Cast:</h4>
+                                <p>
+                                        <%= movies.actors %>
+                                </p>
+                                <h4 class="featurette body">Genre:</h4>
+                                <p>
+                                        <%= movies.genre %>
+                                </p>
+                                <h4 class="featurette body">Runtime</h4>
+                                <p>
+                                        <%= movies.runtime %>
+                                </p>
+                                <h4 class="featurette body">Little known facts:</h4>
+                                <p>
+                                        <%= movies.trivia %>
+                                </p>
+
+
+                        </div>
+
+
+                </div>
+
+
+
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+        </div>
+</body>
+
+</html>

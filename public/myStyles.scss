@@ -1,0 +1,146 @@
+//global variable declarations
+//used for commonly styled elements like background color, font-color, etc
+
+$background-color: #1A293D;
+$paragraph-header-color: #D96E30;
+$paragraph-font-color: #A2D9CE;
+
+body {
+    background-color:  #1A293D;
+    font-family: Courier New, Courier, monospace
+}
+
+.container {
+    font-family: Courier New, Courier, monospace
+}
+
+p {
+    @extend .container;
+    font-size: 16px;
+    color: #a2d9ce;
+}
+
+.container-body {
+    margin: auto;
+    padding: 0% 10%;
+    position: relative;
+}
+
+.card-img-top {
+    height: 441px;
+    width: 91%;
+    margin-bottom: 10%;
+    opacity: 1;
+    transition: 0.5s ease;
+    backface-visibility: hidden;
+    display: block;
+    padding-bottom: 10%
+}
+
+.hovereffect {
+    height: 441px;
+    width: 91%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+
+.hovereffect .overlay {
+    height: 441px;
+    width: 91%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out
+}
+
+.hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+}
+
+.hovereffect h2 {
+    text-transform: uppercase;
+    color: #A2D9CE;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    font-family: Courier New, Courier, monospace;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transform: translatey(-100px);
+    -ms-transform: translatey(-100px);
+    transform: translatey(-100px);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    padding: 10px;
+}
+
+.hovereffect a.info {
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 50px 0 0;
+    padding: 7px 14px;
+}
+
+.hovereffect:hover .overlay {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.hovereffect:hover h2, .hovereffect:hover a.info {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -ms-transform: translatey(0);
+    -webkit-transform: translatey(0);
+    transform: translatey(0);
+}
+
+.hovereffect:hover a.info {
+    -webkit-transition-delay: .2s;
+    transition-delay: .2s;
+}
+
+.featurette-heading {
+    font-size: 4em;
+    color: #D96E30;
+}
+
+h3, h4 {
+    color: #D96E30;
+}
+
+.media-object  {
+    max-height: 50%;
+}
+
+.media-object-remote {
+    max-height: 100%
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+
